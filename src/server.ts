@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { request, response } from 'express';
 
 const  app = express();
 
@@ -10,6 +10,15 @@ app.get('/users', (request, response) => {
         'Franscisca',
         'Marta'
     ]);
+});
+
+app.post('/users', (request, response) => {
+    const user = {
+        name: 'Prince',
+        email: 'prince@prince.com.br'
+    };
+
+    return response.json(user);
 });
 
 app.listen(3333);
